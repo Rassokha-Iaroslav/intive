@@ -37,5 +37,11 @@ public class ApiSteps {
         }
         Assert.assertTrue(moveIsPresent, "Following move are not present: '" + pokemonMove + "'.");
     }
+
+    @Then("user see that pokemon could be received as gift in yellow game version of the Pokemon game")
+    public void userSeeThatPokemonCouldBeReceivedAsGiftInYellowGameVersionOfThePokemonGame() {
+        Response pokemonInfo = (Response) testContext.getContext(Context.POKEMON_INFO);
+//        TODO: implement check that pokemon could be received as gift in yellow game version of the Pokemon game
+    }
 }
 

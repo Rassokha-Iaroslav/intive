@@ -1,0 +1,72 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-02-07T10:43:08.871Z",
+        "line": 3,
+        "name": "Verification of search and filtering",
+        "description": "",
+        "id": "verification-of-search-functionality;verification-of-search-and-filtering",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1244881,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user opens main page and search \"\u003ccommunities and events\u003e\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"\u003ccommunities and events\u003e\"",
+                  "offset": 32
+                }
+              ],
+              "location": "WebUiSteps.userOpensMainPageAndSearch(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 114118,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user can click on \"\u003cAdvanced\u003e\" and filter search results",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"\u003cAdvanced\u003e\"",
+                  "offset": 18
+                }
+              ],
+              "location": "WebUiSteps.userCanClickOnAndFilterSearchResults(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20636,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user see filtered search results",
+            "match": {
+              "location": "WebUiSteps.userSeeFilteredSearchResults()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Verification of search functionality",
+    "description": "",
+    "id": "verification-of-search-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ui/webUiTesting.feature",
+    "tags": []
+  }
+]

@@ -5,6 +5,7 @@ import enums.Browsers;
 import enums.TestRunTypes;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.restassured.RestAssured;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
@@ -30,13 +31,22 @@ public class TestsInitializer {
     }
 
     @Before
-    public static void setup() {
+    public static void setupMain() {
         setUpLoggingLevel();
+    }
+
+    @Before("@apiTest")
+    public void setupApiTest() {
+        RestAssured.baseURI = testEnvConfig.host();
+    }
+
+    @Before("@webTest")
+    public static void setupWebTest() {
         getDriver().manage().window().maximize();
     }
 
-    @After
-    public static void cleanup() {
+    @After("@webTest")
+    public static void cleanupWebTest() {
         WebDriver driver = getDriver();
         threadLocalDriver.remove();
         if (driver != null) {

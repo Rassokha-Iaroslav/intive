@@ -37,7 +37,7 @@ public class TestsInitializer {
 
     @Before("@apiTest")
     public void setupApiTest() {
-        RestAssured.baseURI = testEnvConfig.host();
+        RestAssured.baseURI = testEnvConfig.getApiHost();
     }
 
     @Before("@webTest")

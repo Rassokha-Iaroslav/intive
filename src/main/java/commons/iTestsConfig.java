@@ -24,4 +24,7 @@ public interface iTestsConfig extends Config {
     @Key("pokemonsListPage")
     String getPokemonsListPageUrl();
 
+    @Key("apiBaseHost")
+    String getApiHost();
+
 }

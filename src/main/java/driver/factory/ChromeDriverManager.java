@@ -18,7 +18,6 @@ public class ChromeDriverManager implements IDriverManager {
         System.setProperty("webdriver.chrome.driver",
                 DriverProvider.getDriverPath(Browsers.Chrome));
         ChromeOptions options = new ChromeOptions();
-        //some specific option here
         driver = new ChromeDriver(options);
         return driver;
     }

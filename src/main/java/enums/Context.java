@@ -1,5 +1,6 @@
 package enums;
 
 public enum Context {
-    FILTERED_SEARCH_RESULT
+    SEARCH_RESULT_PAGE,
+    FOUND_RESULTS_LIST
 }

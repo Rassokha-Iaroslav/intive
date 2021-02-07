@@ -6,6 +6,5 @@ public enum Browsers {
     Firefox,
     IE,
     Edge,
-    SafariOnMobile,
     ChromeOnMobile;
 }

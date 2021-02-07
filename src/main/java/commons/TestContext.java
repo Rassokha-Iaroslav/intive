@@ -1,6 +1,7 @@
 package commons;
 
 import enums.Context;
+import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +36,10 @@ public class TestContext {
 
     public Boolean isContains(Context key) {
         return scenarioContext.containsKey(key.toString());
+    }
+
+    public WebDriver getDriver() {
+        return TestsInitializer.getDriver();
     }
 
 }

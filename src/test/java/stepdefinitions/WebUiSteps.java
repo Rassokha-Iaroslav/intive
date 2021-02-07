@@ -60,12 +60,8 @@ public class WebUiSteps {
     @Then("users see in section {string} only Pokemons with name starting with this letter")
     public void usersSeeInSectionOnlyPokemonsWithNameStartingWithThisLetter(String sectionLetter) {
         PokemonsListPage pokemonsListPage = (PokemonsListPage) testContext.getContext(Context.POKEMONS_LIST_PAGE);
-        if (sectionLetter.equals("Y")) {
-            for (String name : pokemonsListPage.getPockemonsListOnLetterY()) {
-                Assert.assertTrue(name.matches("^" + sectionLetter + ".*"), "Following pokemon name is not starting on 'Y' :'" + name + "'.");
-            }
-        } else {
-            Assert.fail("Validation that pokemon names are starting on letter '" + sectionLetter + "' is not implemented yet");
+        for (String name : pokemonsListPage.getPockemonsListOnLetter(sectionLetter)) {
+            Assert.assertTrue(name.matches("^" + sectionLetter + ".*"), "Following pokemon name is not starting on 'Y' :'" + name + "'.");
         }
     }
 }

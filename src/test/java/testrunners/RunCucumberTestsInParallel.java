@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json",
         "rerun:target/rerun.txt"}, features = {"classpath:features"}, glue = {"stepdefinitions",
-        "common"})
+        "commons"})
 public class RunCucumberTestsInParallel extends AbstractTestNGCucumberTests {
 
     @Override

@@ -6,5 +6,6 @@ Feature: Verification of search functionality
     Then user see filtered search results
 
 
-
-#  Scenario: Verification of list of Pokemons by name
+  Scenario: Verification of list of Pokemons by name
+    When user opens page with list of Pokemons
+    Then users see in section "Y" only Pokemons with name starting with this letter

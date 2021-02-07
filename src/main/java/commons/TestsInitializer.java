@@ -3,6 +3,7 @@ package commons;
 import driver.factory.DriverFactory;
 import enums.Browsers;
 import enums.TestRunTypes;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.PropertyConfigurator;
@@ -29,13 +30,22 @@ public class TestsInitializer {
     }
 
     @Before
-    public void setup() {
+    public static void setup() {
         setUpLoggingLevel();
-        getDriver().manage().window();
+        getDriver().manage().window().maximize();
+    }
+
+    @After
+    public static void cleanup() {
+        WebDriver driver = getDriver();
+        threadLocalDriver.remove();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
 
-    private void setUpLoggingLevel() {
+    private static void setUpLoggingLevel() {
         PropertyConfigurator.configure(log4jConfigPath);
         if (TestRunTypes.valueOf(testEnvConfig.getTestRunType().toUpperCase())
                 == TestRunTypes.DEBUG) {

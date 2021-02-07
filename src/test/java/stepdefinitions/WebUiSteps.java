@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageObjects.BasePage;
 import pageObjects.MainPage;
+import pageObjects.PokemonsListPage;
 import pageObjects.SearchResultsPage;
 
 import java.util.List;
@@ -45,6 +46,26 @@ public class WebUiSteps {
         List<WebElement> foundResult = (List<WebElement>) testContext.getContext(Context.FOUND_RESULTS_LIST);
         for (WebElement element : foundResult) {
             Assert.assertTrue(element.getText().contains("Bulbapedia:"), "Found result contains not filtered data : '" + element.getText() + "'.");
+        }
+    }
+
+    @When("user opens page with list of Pokemons")
+    public void userOpensPageWithListOfPokemons() {
+        basePage.openPage(testEnvConfig.host());
+        MainPage mainPage = new MainPage(testContext.getDriver());
+        mainPage.searchFor("List_of_Pokémon_by_name");
+        testContext.setContext(Context.POKEMONS_LIST_PAGE, new PokemonsListPage(testContext.getDriver()));
+    }
+
+    @Then("users see in section {string} only Pokemons with name starting with this letter")
+    public void usersSeeInSectionOnlyPokemonsWithNameStartingWithThisLetter(String sectionLetter) {
+        PokemonsListPage pokemonsListPage = (PokemonsListPage) testContext.getContext(Context.POKEMONS_LIST_PAGE);
+        if (sectionLetter.equals("Y")) {
+            for (String name : pokemonsListPage.getPockemonsListOnLetterY()) {
+                Assert.assertTrue(name.matches("^" + sectionLetter + ".*"), "Following pokemon name is not starting on 'Y' :'" + name + "'.");
+            }
+        } else {
+            Assert.fail("Validation that pokemon names are starting on letter '" + sectionLetter + "' is not implemented yet");
         }
     }
 }

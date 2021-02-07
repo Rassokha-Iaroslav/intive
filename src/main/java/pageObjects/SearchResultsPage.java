@@ -37,10 +37,10 @@ public class SearchResultsPage extends BasePage {
         super(driver);
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        waitVisibility(By.cssSelector(ADVANCE_SEARCH_BUTTON));
     }
 
     public SearchResultsPage filterSearchToBulbapediaOnly() {
+        waitVisibility(By.cssSelector(ADVANCE_SEARCH_BUTTON));
         advanceSearch.click();
         noneFilterBtn.click();
         bulbapediaFilterCheckbox.click();

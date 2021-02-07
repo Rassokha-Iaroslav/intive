@@ -18,7 +18,10 @@ public interface iTestsConfig extends Config {
     String getTestRunType();
 
     @Key("browser")
-    @DefaultValue("chrome")
+    @DefaultValue("Firefox")
     String getBrowser();
+
+    @Key("pokemonsListPage")
+    String getPokemonsListPageUrl();
 
 }

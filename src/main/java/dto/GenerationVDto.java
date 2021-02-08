@@ -1,12 +1,13 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+
+import com.google.gson.annotations.SerializedName;
 
 public class GenerationVDto {
     public BlackWhiteDto getBlackWhite() {
         return blackWhite;
     }
 
-    @JsonProperty("black-white")
+    @SerializedName("black-white")
     public BlackWhiteDto blackWhite;
 }

@@ -1,6 +1,6 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class OtherDto {
     public DreamWorldDto getDream_world() {
@@ -12,6 +12,7 @@ public class OtherDto {
     }
 
     public DreamWorldDto dream_world;
-    @JsonProperty("official-artwork")
+
+    @SerializedName("official-artwork")
     public OfficialArtworkDto officialArtwork;
 }

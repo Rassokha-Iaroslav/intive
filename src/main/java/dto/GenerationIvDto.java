@@ -1,6 +1,7 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+
+import com.google.gson.annotations.SerializedName;
 
 public class GenerationIvDto {
     public DiamondPearlDto getDiamondPearl() {
@@ -15,9 +16,9 @@ public class GenerationIvDto {
         return platinum;
     }
 
-    @JsonProperty("diamond-pearl")
+    @SerializedName("diamond-pearl")
     public DiamondPearlDto diamondPearl;
-    @JsonProperty("heartgold-soulsilver")
+    @SerializedName("heartgold-soulsilver")
     public HeartgoldSoulsilverDto heartgoldSoulsilver;
     public PlatinumDto platinum;
 }

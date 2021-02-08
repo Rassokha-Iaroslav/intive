@@ -1,6 +1,6 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class GenerationIDto {
     public RedBlueDto getRedBlue() {
@@ -11,7 +11,7 @@ public class GenerationIDto {
         return yellow;
     }
 
-    @JsonProperty("red-blue")
+    @SerializedName("red-blue")
     public RedBlueDto redBlue;
     public YellowDto yellow;
 }

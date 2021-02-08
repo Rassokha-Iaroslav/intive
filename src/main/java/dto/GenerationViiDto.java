@@ -1,6 +1,7 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+
+import com.google.gson.annotations.SerializedName;
 
 public class GenerationViiDto {
     public IconsDto getIcons() {
@@ -12,6 +13,6 @@ public class GenerationViiDto {
     }
 
     public IconsDto icons;
-    @JsonProperty("ultra-sun-ultra-moon")
+    @SerializedName("ultra-sun-ultra-moon")
     public UltraSunUltraMoonDto ultraSunUltraMoon;
 }

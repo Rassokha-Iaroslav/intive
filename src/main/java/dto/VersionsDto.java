@@ -1,6 +1,6 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class VersionsDto {
     public GenerationIDto getGenerationI() {
@@ -35,20 +35,20 @@ public class VersionsDto {
         return generationViii;
     }
 
-    @JsonProperty("generation-i")
+    @SerializedName("generation-i")
     public GenerationIDto generationI;
-    @JsonProperty("generation-ii")
+    @SerializedName("generation-ii")
     public GenerationIiDto generationIi;
-    @JsonProperty("generation-iii")
+    @SerializedName("generation-iii")
     public GenerationIiiDto generationIii;
-    @JsonProperty("generation-iv")
+    @SerializedName("generation-iv")
     public GenerationIvDto generationIv;
-    @JsonProperty("generation-v")
+    @SerializedName("generation-v")
     public GenerationVDto generationV;
-    @JsonProperty("generation-vi")
+    @SerializedName("generation-vi")
     public GenerationViDto generationVi;
-    @JsonProperty("generation-vii")
+    @SerializedName("generation-vii")
     public GenerationViiDto generationVii;
-    @JsonProperty("generation-viii")
+    @SerializedName("generation-viii")
     public GenerationViiiDto generationViii;
 }

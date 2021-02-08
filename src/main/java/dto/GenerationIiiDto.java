@@ -1,6 +1,7 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+
+import com.google.gson.annotations.SerializedName;
 
 public class GenerationIiiDto {
     public EmeraldDto getEmerald() {
@@ -16,8 +17,8 @@ public class GenerationIiiDto {
     }
 
     public EmeraldDto emerald;
-    @JsonProperty("firered-leafgreen")
+    @SerializedName("firered-leafgreen")
     public FireredLeafgreenDto fireredLeafgreen;
-    @JsonProperty("ruby-sapphire")
+    @SerializedName("ruby-sapphire")
     public RubySapphireDto rubySapphire;
 }

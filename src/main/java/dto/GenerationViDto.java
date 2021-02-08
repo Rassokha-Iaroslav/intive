@@ -1,6 +1,6 @@
 package dto;
 
-import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class GenerationViDto {
     public OmegarubyAlphasapphireDto getOmegarubyAlphasapphire() {
@@ -11,8 +11,8 @@ public class GenerationViDto {
         return xY;
     }
 
-    @JsonProperty("omegaruby-alphasapphire")
+    @SerializedName("omegaruby-alphasapphire")
     public OmegarubyAlphasapphireDto omegarubyAlphasapphire;
-    @JsonProperty("x-y")
+    @SerializedName("x-y")
     public XYDto xY;
 }

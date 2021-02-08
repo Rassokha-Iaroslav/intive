@@ -11,7 +11,7 @@ import java.util.List;
 public class PokemonsListPage extends BasePage {
     private WebDriver driver;
 
-    private static String templateForListOfPockemonsOnLetterSelector = "//div[@id='mw-content-text']/h3/span[@id=\"letterPlaceholder\"]/../following-sibling::table[1]/tbody/tr/td[2]/a";
+    private static String templateForListOfPockemonsOnLetterSelector = "//div[@id='mw-content-text']/h3/span[@id=\"%s\"]/../following-sibling::table[1]/tbody/tr/td[2]/a";
 
     public PokemonsListPage(WebDriver driver) {
         super(driver);
@@ -22,7 +22,7 @@ public class PokemonsListPage extends BasePage {
 
     public List<String> getPockemonsListOnLetter(String startingLetter) {
         List<String> pokemonstList = new ArrayList<>();
-        List<WebElement> listOfPokemons = driver.findElements(By.xpath(templateForListOfPockemonsOnLetterSelector.replace("letterPlaceholder", startingLetter)));
+        List<WebElement> listOfPokemons = driver.findElements(By.xpath(String.format(templateForListOfPockemonsOnLetterSelector, startingLetter)));
         for (WebElement pockemonElement : listOfPokemons) {
             pokemonstList.add(pockemonElement.getText());
         }

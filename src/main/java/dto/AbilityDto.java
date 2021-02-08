@@ -1,7 +1,7 @@
 package dto;
 
 public class AbilityDto {
-    public AbilityDto getAbility() {
+    public Ability2Dto getAbility() {
         return ability;
     }
 
@@ -13,7 +13,7 @@ public class AbilityDto {
         return slot;
     }
 
-    public AbilityDto ability;
+    public Ability2Dto ability;
     public boolean is_hidden;
     public int slot;
 }

@@ -5,10 +5,10 @@ public class TypeDto {
         return slot;
     }
 
-    public TypeDto getType() {
+    public Type2Dto getType() {
         return type;
     }
 
     public int slot;
-    public TypeDto type;
+    public Type2Dto type;
 }

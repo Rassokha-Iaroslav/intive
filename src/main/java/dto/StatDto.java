@@ -9,11 +9,11 @@ public class StatDto {
         return effort;
     }
 
-    public StatDto getStat() {
+    public Stat2Dto getStat() {
         return stat;
     }
 
     public int base_stat;
     public int effort;
-    public StatDto stat;
+    public Stat2Dto stat;
 }

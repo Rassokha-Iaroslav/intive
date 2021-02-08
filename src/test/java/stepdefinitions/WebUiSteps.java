@@ -36,7 +36,7 @@ public class WebUiSteps {
     @Then("user can click on {string} and filter search results")
     public void userCanClickOnAndFilterSearchResults(String filterOption) {
         SearchResultsPage searchResultsPage = (SearchResultsPage) testContext.getContext(Context.SEARCH_RESULT_PAGE);
-        searchResultsPage.filterSearchToBulbapediaOnly();
+        searchResultsPage = searchResultsPage.filterSearchToBulbapediaOnly();
         testContext.setContext(Context.FOUND_RESULTS_LIST, searchResultsPage.getFoundResults());
     }
 
